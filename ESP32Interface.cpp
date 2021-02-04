@@ -370,6 +370,7 @@ nsapi_error_t ESP32Interface::_reset(void)
         rtos::ThisThread::sleep_for(2ms);
         _esp->flush();
         _rst_pin.rst_deassert();
+        rtos::ThisThread::sleep_for(1s);
     }
 
     return NSAPI_ERROR_OK;
